@@ -1,0 +1,179 @@
+index,error_message
+1,expected ID
+2,expected ID after expression
+3,use of undeclared identifier ID
+4,expected expression
+5,expected identifier or ID
+6,extraneous closing brace (ID)
+7,expected ID statement specifier
+8,expected ID at end of declaration
+9,invalid operands to binary expression (ID)
+10,expression is not assignable
+11,redefinition of ID
+12,use of undeclared identifier ID?
+13,"too few arguments to function call, expected ID, have ID"
+14,expected statement
+15,called object type ID is not a function or function pointer
+16,expected identifier
+17,member reference type ID?
+18,expected ID token
+19,extraneous ID
+20,indirection requires pointer operand (ID invalid)
+21,"subscripted value is not an array, pointer, or vector"
+22,ID undeclared (first use in this function)
+23,expected ID after return statement
+24,ID statement not in loop or switch statement
+25,"extraneous ID after condition, expected a statement"
+26,invalid suffix ID on integer constant
+27,expected ID after struct
+28,non-void function ID should return a value 
+29,expected ID after top level declarator
+30,"too many arguments to function call, expected ID, have ID"
+31,conflicting types for ID
+32,ID file not found
+33,"missing terminating "" character"
+34,definition of variable with array type needs an explicit size or an initializer
+35,undefined reference to ID
+36,function definition is not allowed here
+37,expected expression before ID token
+38,stray ID in program
+39,no member named ID
+40,expected parameter declarator
+41,void function ID should not return a value 
+42,invalid digit ID in decimal constant
+43,array type ID is not assignable
+44,"too few arguments to function call, single argument ID was not specified"
+45,cannot take the address of an rvalue of type ID
+46,invalid ID?
+47,"too many arguments to function call, expected single argument ID, have ID arguments"
+48,member reference base type ID is not a structure or union
+49,expected ID after break statement
+50,assigning to ID
+51,expected ID before string constant
+52,unknown type name ID
+53,variable-sized object may not be initialized
+54,expected ID before numeric constant
+55,array subscript is not an integer
+56,expected expression before ID
+57,"too few arguments to function call, at least argument ID must be specified"
+58,non-ASCII characters are not allowed outside of literals and identifiers
+59,expected ID after continue statement
+60,expected ID after doOPwhile statement
+61,ID statement not in switch statement
+62,subscript of pointer to function type ID
+63,use of undeclared label ID
+64,cannot combine with previous ID declaration specifier
+65,a parameter list without types is only allowed in a function definition
+66,passing ID
+67,invalid operands to binary OP (have ID)
+68,invalid preprocessing directive
+69,argument type ID is incomplete
+70,ID
+71,initializer element is not a compile-time constant
+72,must use ID
+73,expected ID at end of declaration list
+74,called object is not a function or function pointer
+75,invalid suffix ID on floating constant
+76,passing ID); dereference with OP
+77,ID statement not in loop statement
+78,no member named ID?
+79,type name requires a specifier or qualifier
+80,expected ID or OPFILENAMEOP
+81,non-object type ID is not assignable
+82,parameter name omitted
+83,expected declaration or statement at end of input
+84,too few arguments to function ID
+85,unterminated OP comment
+86,lvalue required as left operand of assignment
+87,unexpected type name ID: expected expression
+88,array has incomplete element type ID
+89,missing terminating ' character
+90,expected statement before ID token
+91,expected function body after function declarator
+92,declaration of anonymous struct must be a definition
+93,assigning to ID; dereference with OP
+94,expected identifier or ID token
+95,"assignment to cast is illegal, lvalue casts are not supported"
+96,expected declaration specifiers before ID
+97,unknown type name ID?
+98,redefinition of parameter ID
+99,ID is invalid
+100,cannot increment value of type ID
+101,passing ID; dereference with OP
+102,invalid application of ID
+103,expected ID at end of input
+104,array initializer must be an initializer list or wide string literal
+105,assigning to ID; take the address with OP
+106,initializing ID
+107,duplicate member ID
+108,variable has incomplete type ID
+109,expected declaration specifiers before ID token
+110,array initializer must be an initializer list or string literal
+111,C does not support default arguments
+112,invalid argument type ID to unary expression
+113,passing ID; remove OP
+114,returning ID)
+115,indirection requires pointer operand (ID) invalid)
+116,used type ID where arithmetic or pointer type is required
+117,invalid type argument of unary ID)
+118,returning ID
+119,label at end of compound statement: expected statement
+120,passing ID); take the address with OP
+121,assigning to ID); dereference with OP
+122,returning ID); dereference with OP
+123,assigning to ID)
+124,member reference type ID is not a pointer
+125,read-only variable is not assignable
+126,too few arguments provided to function-like macro invocation
+127,stlib.h: No such file or directory
+128,passing ID; take the address with OP
+129,expected parentheses around type name in sizeof expression
+130,called object ID is not a function or function pointer
+131,expected declaration specifiers or ID before string constant
+132,macro names must be identifiers
+133,size of array has non-integer type ID
+134,statement requires expression of scalar type (ID) invalid)
+135,redeclaration of ID with no linkage
+136,assigning to ID; remove OP
+137,used type ID) where arithmetic or pointer type is required
+138,invalid storage class specifier in function declarator
+139,empty character constant
+140,scalar initializer cannot be empty
+141,expected identifier before ID
+142,statement requires expression of scalar type (ID invalid)
+143,passing ID); remove OP
+144,operand of type ID where arithmetic or pointer type is required
+145,too many arguments to function ID
+146,conio.h: No such file or directory
+147,assigning to ID); remove OP
+148,flexible array member ID not allowed in otherwise empty struct
+149,ID are not pointers to compatible types
+150,maths.h: No such file or directory
+151,variable length array declaration can not have ID storage duration
+152,parameter named ID is missing
+153,second parameter of ID
+154,field has incomplete type ID
+155,expected member name or ID after declaration specifiers
+156,missing terminating OP character
+157,stdio.lib: No such file or directory
+158,lvalue required as increment operand
+159,redefinition of ID)
+160,stdio: No such file or directory
+161,expected external declaration
+162,expected declaration specifiers or ID
+163,invalid application of ID)
+164,cast to incomplete type ID
+165,too many arguments provided to function-like macro invocation
+166,invalid preprocessing directive #int
+167,lvalue required as unary ID operand
+168,exponent has no digits
+169,duplicate case value ID
+170,function cannot return function type ID
+171,stdlib.: No such file or directory
+172,member reference base type ID) is not a structure or union
+173,variable length array declaration not allowed at file scope
+174,expected identifier or ID before numeric constant
+175,studio.h: No such file or directory
+176,array initializer must be an initializer list
+177,returning ID; dereference with OP
+178,returning ID; take the address with OP
