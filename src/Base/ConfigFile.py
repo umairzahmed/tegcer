@@ -1,10 +1,8 @@
 import os, sys
 
-# Init
-
+# --------- Init --------- #
 if  not ('__file__' in locals() or '__file__' in globals()):
     __file__='.'
-
 full_path = os.path.realpath(__file__)
 pathCurr, configFilename = os.path.split(full_path)
 
@@ -16,9 +14,11 @@ pathSavedModels = pathData + 'savedModels/'
 
 fnameDataset = pathInput + 'dataset.csv'
 fnameKeywords = pathInput + "keywords.txt"
-
 fnameClusterErrs = pathOutput + 'clusterErrs.csv'
+
 fnameConfMat = pathOutput + 'currRun_ConfMatrix.csv'
+
+fnameTmpFile = pathInput + 'temp.c'
 
 # --------- Clang library include (stdio, stddef, etc) PATH --------- #
 # Ubuntu: /usr/lib/clang/xx.yy/include
@@ -33,7 +33,7 @@ IncludeIdentifiers = [line.strip() for line in open(fnameIncludeIdent).read().sp
 
 # --------- Data Preprocess Parameters --------- #
 MY_SEED = 3
-FLAG_ADD_EOL = True
+FLAG_ADD_EOL = True # Recommended to always set this flag to True (otherwise, a\nb will a treated as new Token)
 ERRSET_PRE = 'ERROR_#'
 ERRSET_SEP = ' </ERRSET> '
 

@@ -1,3 +1,4 @@
 .vscode/*
 dataset.csv
 *.pyc
+data/input/temp.c
