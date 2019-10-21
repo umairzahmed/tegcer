@@ -1,9 +1,9 @@
 import sys, os, csv, re, operator, collections, difflib
-from subprocess import call
+import subprocess 
 
 from src.Base import ConfigFile as CF, Helper as H
+import Code
 
-import sys  
 reload(sys)  
 sys.setdefaultencoding('utf8')
 
@@ -81,8 +81,8 @@ def createErrSet(keyList, dictErrDiff):
 
     return errSet
 
-def getErrSet(allErrs, dictErrDiff, errPrutor, atLine=None):    
-    errList = re.findall('(?:[a-z0-9\_\/]+\.c\:)?(\d+)\:(?:\d+\:([a-z ]+)\:)?(.*)', errPrutor)
+def getErrSet(allErrs, dictErrDiff, errClang, atLine=None):    
+    errList = re.findall('(?:[a-z0-9\_\/]+\.c\:)?(\d+)\:(?:\d+\:([a-z ]+)\:)?(.*)', errClang)
     # ?: to ignore grouping. First one to make sure either beginning of error-string, or beg of line in error-string
     # Last ? to make the "columnNumber:type" as optional (to match linker errors)
     keyList, lineNums, errExplanationList = [], set(), []
@@ -163,7 +163,7 @@ def writeClusterErr(dictErrDiff):
 
     #print uniqueEdits
 
-def readPrev_AllErrors():
+def readAllErrors():
     '''Check if indexing of errors (sorted based on count) is already present in the path.
     Based on some previous run (or semester). If so, use that indexing (most freq comp error gets index-1)'''
     allErrs = {}
@@ -179,6 +179,31 @@ def readPrev_AllErrors():
         pass
 
     return allErrs
+
+def fetchClangError(codeText):
+    '''Fetch the Clang (command-line) output on compiling the given codeText'''    
+    # Setup
+    f = open(CF.fnameTmpFile, 'w')
+    f.write(codeText)
+    f.close()
+
+    # Invoke Clang            
+    cmd = subprocess.Popen(["clang"] + Code.ClangArgs + [CF.fnameTmpFile], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    cmd_out, cmd_err = cmd.communicate()
+    output = cmd_out +'\n'+ cmd_err
+        
+    return output
+
+def getErrSetLines(allErrs, errClang, lineNumsClang):
+    '''Find errSets/errorGroups reported per line number. 
+Given the list of all possible errors, the compiler output (returned by Clang), and list of erroneous lineNums
+Return the list of errorGroup per line: [err_set@Line-X1, err_set@Line-X2, ...]'''
+    errSets = []
+    for lineNum in lineNumsClang:
+        errSetObj, errExp, lineNums = getErrSet(allErrs, {}, errClang, lineNum) 
+        errSets.append(errSetObj.key)
+
+    return errSets
 
 def writeErrSets(fname):
     headers, lines = H.readCSV(fname)

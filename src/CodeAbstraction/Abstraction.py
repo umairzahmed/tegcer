@@ -125,6 +125,26 @@ def printProgAbstraction(fnamePath):
     for line in absLines:
         print H.joinList(line, ' ')
 
+def getBuggyAbsLine(codeText):
+    '''Given codeText, return the buggy abstract lines (abstraction of erroneous lines) and their line numbers'''
+    codeObj = Code(codeText)
+    absLines = getProgAbstraction(codeObj)
+    errs = codeObj.getSevereErrors()
+    absLinesBuggy, lineNums = [], []
+
+    if len(errs) > 0:
+        for err in errs:
+            lineNum = err.line # Pick the first error line Num
+            if lineNum>0 and lineNum <= len(absLines): 
+                # If line-num reported by compiler doesn't exceeds #absLines (and is >=1)
+                
+                absLine = H.joinList(absLines[lineNum - 1], ' ')
+                if lineNum not in lineNums: # Add unique lineNum / absLine
+                    absLinesBuggy.append(absLine)
+                    lineNums.append(lineNum)
+
+    return absLinesBuggy, lineNums
+
 def writeTypeKind():
     path = './data/'      
     nameRead = path + 'subset-srcTrgtPairs.csv'
