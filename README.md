@@ -17,9 +17,6 @@ Set the `pathClangLib` variable in `./src/Base/ConfigFile.py`, to reflect the va
 ## Running (pre-trained) Tegcer on sample program
 `python -m src.run path/to/buggy.c`
 
-Where,
-1. `path/to/buggy.c` is the path to a buggy program (that fails to compile).
-
 ### For example:
 1. Given the buggy code 
 
@@ -77,7 +74,11 @@ Where,
     | 7   | `for(i=0, i<c, i++)` | C<sub>10</sub> | E<sub>7</sub> +; -, | `for(i=0, i<n; i++) {` | `for(i=0; i<n; i++) {` |
     |     |                      | C<sub>63</sub> | E<sub>7</sub> +; | `{ for(i=0; i++) {` | `{ for(i=0; ; i++) {` |
     | 8   | `printf("i=" i);` | C<sub>7</sub> | E<sub>1</sub> +, | `printf("%s" str);` | `printf("%s", str); ` |
-    |     |                   | C<sub>112</sub> | E<sub>1</sub> +\\" -" -TokenKind.LITERAL_STRING -TypeKind.INVALID | `printf("'a' is not the same as "a"");` | `printf("'a' is not the same as \"a\"");` |
+    |     |                   | C<sub>112</sub> | E<sub>1</sub> +\\" -" -LITERAL_STRING -INVALID | `printf("'a' is not the same as "a"");` | `printf("'a' is not the same as \"a\"");` |
 
 ## Training a new model
+`python -m src.train`
 
+### Logs
+- `./data/output/deepClassify_summary.csv` file contains the summary of all Tegcer training runs.
+- `./data/output/currRun_ConfMatrix.csv` file contains the confusion matrix of the last Tegcer training run.

@@ -1,0 +1,633 @@
+time_Recorded,train_set,predict_set,totalNumPairs,"Train,Valid,Test",numClasses,modelName,modelSummary,"Pred@1,3,5",precision,recall,trainTime,max_seq_length,max_vocab_size,TRAIN_MULT_FACTOR,EPOCHS,EMBEDDING_VECTOR_LENGTH,classMapping_RawCluster,confusion_matrix,acc,loss,val_acc,val_loss
+Fri Oct 25 16:02:02 2019,sourceLineAbs,errSet_diffs,15579,"(0.7, 0.1, 0.2)",212,Dense_Bin,"dense_1/Relu:0 (?, 512)
+dropout_1/cond/Merge:0 (?, 512)
+dense_2/Softmax:0 (?, 213)","[86.12, 97.39, 98.74]",0.86,0.86,0:00:21.467810,277,1756,1,6,32,"1 -> 2;
++ ;
+2 -> 3;
++ TypeKind.INT
+- TypeKind.INVALID
+3 -> 1;
++ }
+4 -> 1;
++ )
+5 -> 5;6;
+- }
+6 -> 8;
++ ;
+7 -> 1;
++ ,
+8 -> 10;
++ ==
+- =
+9 -> 1;
++ ;
+10 -> 7;
++ ;
+- ,
+11 -> 3;
++ TypeKind.CONSTANTARRAY
+- TypeKind.INVALID
+12 -> ;
++ TypeKind.FUNCTIONCALL
+- TypeKind.FUNCTIONNOPROTO
+13 -> ;
++ printf
+- TypeKind.FUNCTIONNOPROTO
+14 -> 9;
++ ,
+15 -> 4;
++ TypeKind.INT
+16 -> 3;
++ TokenKind.LITERAL_INT
+- TypeKind.INVALID
+17 -> 4;
++ TokenKind.LITERAL_INT
+18 -> 4;
+- [
+- ]
+19 -> 4;
+- else
+20 -> 4;
+- ,
+21 -> 1;14;
++ )
+22 -> 5;
+- ,
+23 -> 23;
++ ;
+24 -> 3;
++ TypeKind.POINTER
+- TypeKind.INVALID
+25 -> 27;
++ ;
+26 -> 3;
++ TypeKind.FLOAT
+- TypeKind.INVALID
+27 -> 3;
++ '
++ TokenKind.LITERAL_CHAR
+- TypeKind.INVALID
+28 -> 11;
+- ,
+- TypeKind.INT
+29 -> 15;
++ *
+30 -> 1;4;
++ )
+- )
+31 -> 4;
+- ;
+32 -> 6;
+- }
+33 -> 3;
++ TypeKind.INCOMPLETEARRAY
+- TypeKind.INVALID
+34 -> 13;
++ ,
++ TypeKind.INT
+35 -> 12;
++ TypeKind.INT
+- TypeKind.INVALID
+36 -> 25;
+- )
+37 -> 4;
++ <=
+- <
+- =
+38 -> 1;
+- ""
+- TokenKind.LITERAL_CHAR
+- TypeKind.INVALID
+39 -> 1;
+- (
+40 -> 19;
+- )
+41 -> 4;
+- int
+42 -> 3;
++ TypeKind.VARIABLEARRAY
+- TypeKind.INVALID
+43 -> 4;
+- =
+44 -> 4;
+- *
+- /
+45 -> 3;
++ TypeKind.CHAR_U
+- TypeKind.INVALID
+46 -> 26;
++ *
++ TokenKind.LITERAL_INT
++ TypeKind.INT
+- TokenKind.LITERAL_TypeKind.INVALID
+47 -> 11;
+- int
+48 -> 3;
++ ,
++ TypeKind.INT
+49 -> 35;
++ printf
+- TypeKind.FUNCTIONNOPROTO
+50 -> 1;
+- {
+51 -> 3;
+- TypeKind.INVALID
+52 -> 13;
++ ,
++ TokenKind.LITERAL_INT
+53 -> 17;
++ ->
+- .
+54 -> 29;
++ ;
+55 -> 1;
+- if
+56 -> 20;
+- *
+57 -> 2;
++ if
+58 -> 1;4;
+- ;
+59 -> 1;
++ (
++ )
+60 -> 1;19;
++ ,
+- ;
+61 -> 9;
++ *
++ TypeKind.FLOAT
+- TokenKind.LITERAL_INT
+- ^
+62 -> 28;
++ TokenKind.LITERAL_INT
+63 -> 7;
++ ;
+64 -> 16;
+- .
+65 -> 4;
++ (
++ )
+66 -> 1;36;8;
++ }
+67 -> 4;
++ >=
+- =
+- >
+68 -> 16;
++ (
++ )
+69 -> 3;
++ int
+70 -> 1;
++ \""
+- ""
+- TokenKind.LITERAL_CHAR
+- TokenKind.LITERAL_STRING
+- TypeKind.INVALID
+71 -> 5;6;
++ {
+72 -> 12;
++ TypeKind.CONSTANTARRAY
+- TypeKind.INVALID
+73 -> 32;
++ stdlib
+- stlib
+74 -> 4;
++ &
+- %
+75 -> ;
++ scanf
+- TypeKind.FUNCTIONNOPROTO
+76 -> 49;
++ ;
+77 -> 4;
+- )
+78 -> 4;
++ '
++ TokenKind.LITERAL_CHAR
+- ''
+79 -> 2;
++ ;
+- :
+80 -> 42;
++ *
++ TokenKind.LITERAL_INT
++ TypeKind.INT
+- TokenKind.LITERAL_TypeKind.INVALID
+81 -> 4;
++ '
++ \n
+- TypeKind.INVALID
+- \
+82 -> 24;
+- ;
+- break
+83 -> 1;
++ )
++ ;
+- "");
+84 -> 1;4;
++ }
+85 -> 7;
++ ++
++ ;
++ TypeKind.INT
+86 -> 39;
++ TypeKind.INT
+- TypeKind.INVALID
+87 -> 3;
++ TypeKind.CONSTANTARRAY
+- TypeKind.INCOMPLETEARRAY
+88 -> 4;
++ '
++ TokenKind.LITERAL_STRING
+- TokenKind.LITERAL_INT
+- \
+89 -> 34;
++ TokenKind.LITERAL_INT
+90 -> 48;
++ ,
+- .
+91 -> 9;
++ *
++ TypeKind.INT
+- TokenKind.LITERAL_INT
+- ^
+92 -> 4;
+- /
+93 -> 3;
++ TypeKind.INT
++ int
+- TypeKind.INVALID
+94 -> 16;
++ (
+95 -> 2;
++ ;
+- ;
+96 -> 46;
++ =
+- ==
+97 -> 4;
+- &&
+98 -> 60;
++ ;
+99 -> 12;28;
++ TokenKind.LITERAL_INT
++ return
+- TypeKind.INVALID
+100 -> 1;4;
+- ]
+101 -> 30;
+- ,
+- TypeKind.INT
+102 -> 4;
++ (
+103 -> 12;
++ TypeKind.POINTER
+- TypeKind.INVALID
+104 -> 1;
++ ]
+105 -> 1;
++ )
++ ;
+106 -> 1;14;
+- (
+107 -> 4;
+- 
+108 -> 59;
++ ;
+109 -> 5;8;
+- int
+110 -> 8;
++ ;
+- ,
+111 -> 19;
++ (
+112 -> 1;
++ \""
+- ""
+- TokenKind.LITERAL_STRING
+- TypeKind.INVALID
+113 -> 1;
+- ""
+- TypeKind.INVALID
+114 -> 3;
+- ,
+- TypeKind.INVALID
+115 -> 41;
++ int
+- void
+116 -> 15;
++ ,
+117 -> 1;
++ )
++ ;
++ \""
+- "");
+118 -> 21;
++ TypeKind.CONSTANTARRAY
+- TypeKind.INT
+119 -> 25;
++ (
+120 -> 4;
++ '
++ TokenKind.LITERAL_CHAR
+121 -> 4;
+- `
+122 -> 12;
++ TypeKind.FLOAT
+- TypeKind.INVALID
+123 -> 15;
++ [
++ ]
+- (
+- )
+124 -> 1;
++ \""
+- ""
+- TokenKind.LITERAL_CHAR
+- TypeKind.INVALID
+125 -> 22;
++ TypeKind.INT
+- TypeKind.INVALID
+126 -> 30;
+- ,
+- TokenKind.LITERAL_INT
+127 -> 1;
++ \""
+- ""
+- TypeKind.INVALID
+128 -> 1;31;40;
++ ;
+- ,
+129 -> 2;4;7;
+- )
+130 -> 3;
++ *
++ TypeKind.FLOAT
+- TypeKind.INVALID
+131 -> 3;4;
++ ""
++ %d
+- %
+- TypeKind.INVALID
+132 -> 45;
+- &
+133 -> 4;
++ TypeKind.FLOAT
+134 -> 4;
+- (
+- )
+135 -> 18;
++ ;
+136 -> 1;
++ )
++ ;
++ \""
+- "");
+- \
+137 -> 1;
+- TypeKind.INVALID
+- \
+138 -> 40;
+- ,
+139 -> 4;
+- (
+- )
+- int
+140 -> 4;
+- *
+141 -> 4;
+- ||
+142 -> 54;
++ ,
+143 -> 21;
++ TypeKind.VARIABLEARRAY
+- TypeKind.INT
+144 -> 4;
++ '
++ TokenKind.LITERAL_STRING
+- ''
+145 -> 4;
++ {
++ }
+146 -> 12;
++ EOF
+- TypeKind.INVALID
+147 -> 16;
+- )
+148 -> 1;
++ !=
+- !
+149 -> 1;
++ \n
+- TypeKind.INVALID
+- \
+150 -> 3;
++ TypeKind.DOUBLE
+- TypeKind.INVALID
+151 -> 43;
++ TypeKind.INT
++ [
++ ]
+152 -> 47;
+- ,
+- TypeKind.INT
+153 -> 4;
+- (
+- )
+- if
+154 -> 51;
++ (
++ )
+155 -> 11;
+- ;
+- TypeKind.INT
+- int
+156 -> 13;
++ ,
++ TypeKind.POINTER
+157 -> 14;
++ ;
+158 -> 14;
+- else
+159 -> 17;
++ .
+- ->
+160 -> 1;
++ )
++ ;
++ \""
++ \\
+- "");
+- &
+- .
+- TypeKind.INVALID
+- \
+- double
+161 -> 1;2;4;
++ ,
+- ;
+162 -> 1;31;40;5;6;
+- }
+163 -> 1;4;
+- {
+164 -> 20;
++ &
+- *
+165 -> 24;
++ return
+- break
+166 -> 3;
++ TypeKind.FUNCTIONCALL
+- TypeKind.INVALID
+167 -> 3;
++ return
+- TypeKind.INVALID
+168 -> 41;
+- TokenKind.LITERAL_INT
+169 -> 4;
+- -
+170 -> 4;8;
++ ;
+171 -> 7;
++ while
+- for
+172 -> ;
++ getchar
+- TypeKind.FUNCTIONNOPROTO
+173 -> 10;
++ (
++ )
+174 -> 1;
++ )
++ ;
++ \""
++ \\
+- "");
+- &
+- TypeKind.INVALID
+- \
+- double
+175 -> 1;
++ \""
+- ""
+- /
+- TokenKind.LITERAL_CHAR
+- TokenKind.LITERAL_STRING
+- TypeKind.INVALID
+176 -> 21;
++ TokenKind.LITERAL_INT
++ [
++ ]
+177 -> 28;
++ TypeKind.INT
+178 -> 2;4;
++ (
+179 -> 37;
+- ,
+180 -> 3;
+- ""
+- %d
+- (
+- )
+- ,
+- ;
+- TypeKind.INVALID
+- printf
+181 -> 4;
++ ;
+- ,
+182 -> 4;
+- +
+183 -> 4;
+- \
+184 -> 67;
++ ,
+185 -> 11;
+- ,
+- TypeKind.FLOAT
+186 -> 11;
+- float
+187 -> 11;4;7;
++ ;
+- ,
+188 -> 12;
++ TypeKind.INCOMPLETEARRAY
+- TypeKind.INVALID
+189 -> 13;
++ ,
++ TypeKind.INCOMPLETEARRAY
+190 -> 16;
++ )
++ ;
++ \""
+- "");
+- .
+191 -> 17;45;
++ .
++ TypeKind.INT
+- ->
+- TypeKind.INVALID
+192 -> 1;
++ /
+- \
+193 -> 1;
+- (
+- )
+194 -> 1;
+- for
+195 -> 1;47;5;
+- ;
+196 -> 2;
++ *
+197 -> 2;4;
+- )
+198 -> 3;
++ ;
++ TypeKind.INT
++ int
+199 -> 3;
++ TypeKind.CONSTANTARRAY
+- TypeKind.POINTER
+200 -> 3;
++ else
+- TypeKind.INVALID
+201 -> 3;
++ sizeof
+- TypeKind.INVALID
+202 -> 3;4;
++ ""
++ %f
+- %
+- TypeKind.INVALID
+203 -> 43;
++ ==
+- =
+204 -> 44;
++ TypeKind.CONSTANTARRAY
+205 -> 4;
++ (
++ )
+- (
+- )
+206 -> 4;
++ ;
+207 -> 4;
+- char
+208 -> 5;
+- ;
+209 -> 5;
+- int
+210 -> 5;8;
++ ;
+- ,
+211 -> 62;
++ (
++ )
+- [
+- ]
+212 -> 9;
++ ,
+- &",,"[0.61, 0.85, 0.9, 0.92, 0.93, 0.94]","[2.0, 0.56, 0.34, 0.26, 0.22, 0.19]","[0.81, 0.86, 0.87, 0.87, 0.87, 0.87]","[0.77, 0.48, 0.44, 0.41, 0.42, 0.41]"
