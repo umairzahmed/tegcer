@@ -31,7 +31,7 @@ If you use any part of our dataset, then please cite both [ASE-2019 TEGCER paper
 ```
 @article{das2016prutor,
   title={Prutor: A system for tutoring CS1 and collecting student programs for analysis},
-  author={Das, Rajdeep and Ahmed, Umair Z and Karkare, Amey and Gulwani, Sumit},
+  author={Das, Rajdeep and Ahmed, Umair Z. and Karkare, Amey and Gulwani, Sumit},
   journal={arXiv preprint arXiv:1608.03828},
   year={2016}
 }
@@ -56,19 +56,30 @@ The column names in extracted `dataset.csv` file are as follows:
 - **errSet_diffs**: The error-repair class that the buggy program belongs to. A combination of *ErrSet* and its repair (diff between *sourceLineAbs* and *targetLineAbs*)
        
 
-
 ## Setup
-### Extract dataset
-`unzip ./data/input/dataset.zip`
-
 ### Ubuntu/Debian packages
-`sudo apt install clang`
+`sudo apt install clang python-pip python-tk unzip`
+
+### Extract dataset
+`unzip -d ./data/input/ ./data/input/dataset.zip`
 
 ### Python packages
 `pip install --version requirements.txt`
 
-### Clang include path
-Set the `pathClangLib` variable in `./src/Base/ConfigFile.py`, to reflect the valid path to your Clang installation's header files directory.
+### Set Clang paths
+
+1. Create symbolic link to enable Python-Clang bind
+    ```
+    cd /usr/lib/x86_64-linux-gnu/
+    sudo ln -s libclang-XX.YY.so.1 libclang.so
+    ```
+
+    Where, `XX.YY` is the version number of Clang installed on your system.
+
+2. Set the `pathClangLib` variable in `./src/Base/ConfigFile.py`, to reflect the valid path to your Clang installation's header files directory.
+    ```
+    pathClangLib = "/usr/lib/clang/XX.YY/include" 
+    ```
 
 
 ## Running (pre-trained) Tegcer on buggy program

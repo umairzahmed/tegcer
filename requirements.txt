@@ -1,0 +1,6 @@
+keras==2.0.8
+tensorflow==1.14.0
+pandas==0.24.2
+sklearn==0.0
+seaborn==0.9.0
+clang==6.0.0.2
