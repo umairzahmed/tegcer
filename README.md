@@ -1,7 +1,7 @@
 # TEGCER: Targeted Example Generation for Compilation ERrors
-TEGCER is an automated example based feedback generation tool for novice programmers. TEGCER uses supervised classification to match compilation errors in new code submissions with relevant pre-existing errors, submitted by other students before. 
+TEGCER is an automated feedback generation tool for novice programmers, in the form of examples. TEGCER uses supervised classification to match compilation errors in new code submissions with relevant pre-existing errors, submitted by other students before. 
 
-The dense neural network used to perform this classification task is trained on 15000+ error-repair code examples. The proposed model yields a test set classification Pred@3 accuracy of 97.7% across 212 error category labels. Using this model as its base, TEGCER presents students with the closest relevant examples of solutions for their specific error on demand. 
+The dense neural network used to perform this classification task is trained on 15,000+ error-repair code examples. The proposed model yields a test set classification Pred@3 accuracy of 97.7% across 212 error category labels. Using this model as its base, TEGCER presents students with the closest relevant examples of solutions for their specific error on demand. 
 
 A large scale (N > 230) usability study shows that students who use TEGCER are able to resolve errors more than 25% faster on average than students being assisted by human tutors.
 
@@ -11,10 +11,10 @@ A large scale (N > 230) usability study shows that students who use TEGCER are a
 - [Nisheeth Srivastava](https://www.cse.iitk.ac.in/users/nsrivast/), [IIT Kanpur](https://www.cse.iitk.ac.in/)
 - [Amey Karkare](https://www.cse.iitk.ac.in/users/karkare/), [IIT Kanpur](https://www.cse.iitk.ac.in/)
 
-\* Part of this work was carried out by the author at [IBM Research](https://www.research.ibm.com/labs/india/).
+<sup>*</sup> Part of this work was carried out by the author at [IBM Research](https://www.research.ibm.com/labs/india/).
 
 ## Publication
-If you use any part of our TEGCER tool or data present in this repository, then please do cite our [ASE-2019 TEGCER paper](https://arxiv.org/pdf/1909.00769.pdf).
+If you use any part of our TEGCER tool, then please do cite our [ASE-2019 TEGCER paper](https://arxiv.org/pdf/1909.00769.pdf).
 
 ```
 @inproceedings{ahmed2019tegcer,
@@ -25,6 +25,37 @@ If you use any part of our TEGCER tool or data present in this repository, then 
     organization={IEEE/ACM}
 }
 ```
+
+If you use any part of our dataset, then please cite both [ASE-2019 TEGCER paper](https://arxiv.org/pdf/1909.00769.pdf) which released this dataset, as well as [Prutor IDE paper](https://arxiv.org/pdf/1608.03828.pdf) which collated this dataset.
+
+```
+@article{das2016prutor,
+  title={Prutor: A system for tutoring CS1 and collecting student programs for analysis},
+  author={Das, Rajdeep and Ahmed, Umair Z and Karkare, Amey and Gulwani, Sumit},
+  journal={arXiv preprint arXiv:1608.03828},
+  year={2016}
+}
+```
+
+## Dataset
+Our student code repository consists of code attempts made by students, during the 2015–2016 fall semester course offering of Introductory to C Programming (CS1) at [IIT Kanpur](http://www.iitk.ac.in/), a large public university. This course was credited by 400+ first year undergraduate students, who attempted 40+ different programming assignments as part of course requirement. These assignments were completed on a custom web-browser based IDE [Prutor](https://www.cse.iitk.ac.in/users/karkare/prutor/), which records all intermediate code attempts.
+
+The `./data/input/dataset.zip` archive contains more than 20,000 buggy-correct program pairs, such that (i) the student program failed to compile and (ii) the same student edited a single-line in buggy program to repair it. This dataset is further described in Section-III of our [ASE-2019 TEGCER paper](https://arxiv.org/pdf/1909.00769.pdf).
+
+The column names in extracted `dataset.csv` file are as follows:
+- **sourceText**: The buggy program
+- **targetText**: The correct/repaired program
+- **sourceTime**: Timestamp of buggy program
+- **targetTime**: Timestamp of correct program
+- **sourceLineText**: The buggy line which was modified/replaced in buggy program
+- **targetLineText**: The repaired line
+- **sourceLineAbs**: Abstraction of *sourceLineText*
+- **targetLineAbs**: Abstraction of *targetLineText*
+- **errorClang**: The error message returned by [Clang](https://clang.llvm.org/) C compiler
+- **ErrSet**: The error-group (EG) of buggy program
+- **errSet_diffs**: The error-repair class that the buggy program belongs to. A combination of *ErrSet* and its repair (diff between *sourceLineAbs* and *targetLineAbs*)
+       
+
 
 ## Setup
 ### Extract dataset
