@@ -206,15 +206,16 @@ Return the list of errorGroup per line: [err_set@Line-X1, err_set@Line-X2, ...]'
     return errSets
 
 def writeErrSets(fname):
+    '''Invoke this function on a "clean" dataset - a dataset.csv which doesn't contain the ErrSet column.'''
     headers, lines = H.readCSV(fname)
     headers.append("ErrSet")
     dictErrDiff = {} # {CompErr1:ErrSet1, ...}
-    allErrs = readPrev_AllErrors()
+    allErrs = readAllErrors()
     count = 0
     print 'Total #src-target pairs=',len(lines)
 
-    indexErrPrutor = headers.index("sourceErrorPrutor")
-    indexErrClang = headers.index("sourceErrorClangParse")
+    indexErrClang = headers.index("errorClang")
+    indexErrLLVM = headers.index("errorLLVM")
     indexLineNums = headers.index("lineNums_Abs")
     indexDi, indexDd = headers.index("diffAbs_ins"), headers.index("diffAbs_del")
 
@@ -224,10 +225,10 @@ def writeErrSets(fname):
             print count,'/',len(lines),'done ...'
 
         diffsI, diffsD = line[indexDi].splitlines(), line[indexDd].splitlines()
-        errPrutor, errClang, diffLineNums = line[indexErrPrutor], line[indexErrClang], set(line[indexLineNums].splitlines())
-        errPrutor, errClang = errPrutor.replace('\r', '\n'), errClang.replace('\r', '\n')
+        errClang, errLLVM, diffLineNums = line[indexErrClang], line[indexErrLLVM], set(line[indexLineNums].splitlines())
+        errClang, errLLVM = errClang.replace('\r', '\n'), errLLVM.replace('\r', '\n')
 
-        errSet, errExpList, compLineNums = getErrSet(allErrs, dictErrDiff, errPrutor) # Get the err-set (unique rep for set of errors)
+        errSet, errExpList, compLineNums = getErrSet(allErrs, dictErrDiff, errClang) # Get the err-set (unique rep for set of errors)
         clusterErr(errSet, diffsI, diffsD) # Cluster the diffs (add the diff to dictErrDiff)
         errSet.calcIntersection(compLineNums, diffLineNums) # Update counts to calc precision-recall of compiler lineNums
 
